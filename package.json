@@ -1,0 +1,26 @@
+{
+  "name": "tavily-cursor-mcp",
+  "version": "1.0.0",
+  "description": "Tavily MCP Server with Cursor-compatible tool names (underscores)",
+  "type": "module",
+  "bin": {
+    "tavily-cursor-mcp": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "mcp",
+    "tavily",
+    "cursor",
+    "search"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
