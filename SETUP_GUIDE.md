@@ -49,7 +49,7 @@ The setup script will:
          "command": "node",
          "args": ["C:\\Users\\YourName\\mcp-servers\\tavily-cursor-mcp\\index.js"],
          "env": {
-           "TAVILY_API_KEY": "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"
+           "TAVILY_API_KEY": "your-tavily-api-key-here"
          }
        }
      }
@@ -64,7 +64,7 @@ The setup script will:
          "command": "node",
          "args": ["/Users/yourname/mcp-servers/tavily-cursor-mcp/index.js"],
          "env": {
-           "TAVILY_API_KEY": "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"
+           "TAVILY_API_KEY": "your-tavily-api-key-here"
          }
        }
      }
