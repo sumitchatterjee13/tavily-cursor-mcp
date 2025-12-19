@@ -79,7 +79,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
     tools: [
       {
-        name: "search",
+        name: "tavily_search",
         description:
           "Search the web using Tavily API. Returns relevant search results with URLs, content snippets, and metadata.",
         inputSchema: {
@@ -133,7 +133,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
         },
       },
       {
-        name: "extract",
+        name: "tavily_extract",
         description:
           "Extract clean content from one or more URLs. Returns the main content from web pages, removing ads and navigation.",
         inputSchema: {
@@ -151,7 +151,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
         },
       },
       {
-        name: "search_qna",
+        name: "tavily_search_qna",
         description:
           "Get a direct answer to a question using Tavily's Q&A optimized search. Returns a concise answer to specific questions.",
         inputSchema: {
@@ -172,7 +172,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
         },
       },
       {
-        name: "search_context",
+        name: "tavily_search_context",
         description:
           "Generate context for RAG applications. Returns search results optimized for context generation.",
         inputSchema: {
@@ -207,7 +207,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
   try {
     switch (name) {
-      case "search": {
+      case "tavily_search": {
         const result = await tavilyClient.search({
           query: args.query,
           search_depth: args.search_depth || "basic",
@@ -229,7 +229,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         };
       }
 
-      case "extract": {
+      case "tavily_extract": {
         const result = await tavilyClient.extract({
           urls: args.urls,
         });
@@ -244,7 +244,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         };
       }
 
-      case "search_qna": {
+      case "tavily_search_qna": {
         const result = await tavilyClient.search({
           query: args.query,
           search_depth: args.search_depth || "basic",
@@ -261,7 +261,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         };
       }
 
-      case "search_context": {
+      case "tavily_search_context": {
         const result = await tavilyClient.search({
           query: args.query,
           search_depth: args.search_depth || "basic",
